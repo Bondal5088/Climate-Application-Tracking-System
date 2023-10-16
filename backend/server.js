@@ -34,13 +34,13 @@ app.post('/login', (req, res) => {
         if(err) {
             return res.json("Error");
         }
-        return res.json(data);
+        if(data.length > 0){
+            return res.json("Success");
+        } else {
+            return res.json("Failed");
+        }
     })
-    if(data.length > 0){
-        return res.json("Success");
-    } else {
-        return res.json("Failed");
-    }
+
 })
 
 app.listen(3036, ()=> {
