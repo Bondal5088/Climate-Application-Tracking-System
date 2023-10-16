@@ -9,6 +9,7 @@ import rain_icon from "../Majorfiles/rain.png";
 import drizzle_icon from "../Majorfiles/drizzle.png";
 import wind_icon from "../Majorfiles/wind.png";
 import humidity_icon from "../Majorfiles/humidity.png";
+
 const CatsApp = () => {
 
     let api_key="a8b77da5e489ae2ae6c426dd117803e4";
@@ -20,8 +21,8 @@ const CatsApp = () => {
         if(element[0].value==="")
         {
             return 0;
-        }
-      
+        } 
+           
         let url =`https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=imperial&appid=${api_key}`;
 
         let response = await fetch(url);
@@ -32,6 +33,8 @@ const CatsApp = () => {
         const wind = document.getElementsByClassName("wind-speed");
         const temperature = document.getElementsByClassName("climate-temp");
         const location = document.getElementsByClassName("climate-location");
+
+        
 
         humidity[0].innerHTML = data.main.humidity+"% Humidity";
         wind[0].innerHTML = Math.round(data.wind.speed)+"mph Wind Speed";
