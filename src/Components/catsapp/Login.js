@@ -13,14 +13,15 @@ const Login = () => {
     const navigate = useNavigate();
 
     const[errors, setErrors] = useState({})
+
     const handleInput = (event) => {
         setValues(prev => ({...prev, [event.target.name]: [event.target.value]}))
     }
-    const handleSubmit =(event) => {
+    function handleSubmit(event) {
         event.preventDefault();
         setErrors(validation(values));
         if(errors.email ==="" && errors.password ==="") {
-            axios.post('/login', values)
+            axios.post('http://localhost:3002/', values)
             .then(res => {
                 if(res.data === "Success"){
                 navigate('/catsapp');
@@ -32,7 +33,8 @@ const Login = () => {
     }
 }
   return (
-    <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>
+    <div className='d-flex justify-content-center align-items-center'>
+      <img className="bg-img" src="../Majorfiles/concrete-1646788_1280.jpg" alt=""></img>
       <div className='bg-white p-3 rounded w-25'>
         <form action="" onSubmit={handleSubmit}> 
         <div className='mb-3'>
