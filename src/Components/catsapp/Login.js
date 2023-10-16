@@ -49,7 +49,7 @@ const Login = () => {
             onChange={handleInput} className='form-control rounded-0'/>
             {errors.password && <span className ='text-danger'> {errors.password}</span>}
         </div>
-        <button type='sumbit' className='btn btn-success w-100 rounded-0'><strong>Log in</strong></button>
+        <Link to='/catsapp' type='sumbit' className='btn btn-success w-100 rounded-0' onClick={handleInput}><strong>Log in</strong></Link>
         <p>Don't have an Account?</p>
         <Link to='/signup' className='btn btn-default border w-100 bg-light rounded-0 text-decoration-none'>Create an Account Here</Link>
         </form>
