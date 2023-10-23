@@ -1,0 +1,114 @@
+//   <div>
+//     <div className="container">
+// <div className="row">
+//   <div className='top bar'>
+//     <input type="text" className="cityInput" placeholder='Enter City Name' />
+//     <div className="search-icon" onClick={()=>{search()}}>
+      
+//     </div>
+//   </div>
+// <Bar
+// data={temp}
+// options={{
+//   title:{
+//     display:true,
+//     text: 'Average Rainfall per month',
+//     fontSize:20
+//   },
+//   legend: {
+//     display:true,
+//     position:'right'
+//   }
+// }}
+// />
+// </div>
+//     </div>
+//   </div>
+// )
+ 
+
+ 
+  
+// const Chart = () => {
+
+//   let api_key="a8b77da5e489ae2ae6c426dd117803e4";
+
+//   const search = async () => {
+//     const element =document.getElementsByClassName("cityInput")
+//     if(element[0].value==="")
+//     {
+//         return 0;
+//     } 
+       
+//     let url =`https://api.openweathermap.org/data/2.5/forecast?q=${element[0].value}&units=imperial&appid=${api_key}`;
+
+//     let response = await fetch(url);
+//     let chart = await response.json();
+
+//     const humidity = document.getElementsByClassName("humidity-percent");
+//     const wind = document.getElementsByClassName("wind-speed");
+//     const temperature = document.getElementsByClassName("climate-temp");
+//     const location = document.getElementsByClassName("climate-location");
+
+    
+
+//     humidity[0].innerHTML = chart.main.humidity+"% Humidity";
+//     wind[0].innerHTML = Math.round(chart.wind.speed)+"mph Wind Speed";
+//     temperature[0].innerHTML = Math.round(chart.main.temp)+"°F";
+//     location[0].innerHTML = chart.name;
+
+//   }
+// chartIt();
+// search();
+
+// async function chartIt(){
+//   await search();
+//  chart(ctx, {
+//     labels: ['Humidity', 'Wind', 'Temperature'],
+//     datasets: [{
+//       label: 'Climate Data',
+//       data: [12, 19, 3, 5, 2, 3],
+//       backgroundColor: [
+//         'rgba(255, 99, 132, 0.2)',
+//         'rgba(54, 162, 235, 0.2)',
+//         'rgba(255, 206, 86, 0.2)',
+//         'rgba(75, 192, 192, 0.2)',
+//         'rgba(153, 102, 255, 0.2)',
+//         'rgba(255, 159, 164, 0.2)'
+//       ],
+//       borderColor: [
+//         'rgba(255, 99, 132, 1)',
+//         'rgba(54, 162, 235, 1)',
+//         'rgba(255, 206, 86, 1)',
+//         'rgba(75, 192, 192, 1)',
+//         'rgba(153, 102, 255, 1)',
+//         'rgba(255, 159, 164, 1)'
+//       ],
+//       borderWidth: 1
+//   }]
+// },
+
+// options: {
+//   scales:{
+//     y: {
+//       beginAtZero: true
+//     }
+//   }
+  
+// });
+// }
+//   return (
+//     <div>
+//       <h1>Climate Application Tracking System Chart</h1>
+//       <input type="text" className="cityInput" placeholder='Enter City Name'></input>
+//       <button type='sumbit' className='btn btn-success w-3 rounded-10' onClick={()=>{search()}}><strong>Search</strong></button>
+//       <Bar
+//       data={data}
+//       height={400}
+//       options={options}
+//       />
+//     </div>
+//   )
+// }
+
+

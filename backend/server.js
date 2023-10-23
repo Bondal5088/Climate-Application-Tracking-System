@@ -3,8 +3,11 @@ const mysql = require('mysql');
 const cors = require('cors');
 
 const app = express();
+
+
 app.use(cors());
 app.use(express.json());
+
 
 const db = mysql.createConnection({
     host: "localhost",
@@ -29,8 +32,8 @@ app.post('/signup', (req, res) => {
 })
 
 app.post('/login', (req, res) => {
-    const sql = "SELECT * FROM login WHERE `email` = ?";
-    db.query(sql, [req.body.email, req.body.password ], (err, data)=> {
+    const sql = "SELECT * FROM login WHERE `email` = ? AND `password` = ?";
+    db.query(sql, [req.body.email, req.body.password], (err, data)=> {
         if(err) {
             return res.json("Error");
         }
@@ -43,6 +46,6 @@ app.post('/login', (req, res) => {
 
 })
 
-app.listen(3036, ()=> {
+app.listen(3000, ()=> {
     console.log("listening");
 })

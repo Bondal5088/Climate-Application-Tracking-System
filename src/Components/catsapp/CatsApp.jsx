@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './CatsApp.css'
+import {Link} from 'react-router-dom'
 
 import search_icon from '../Majorfiles/search.png';
 import clear_icon from '../Majorfiles/clear.png';
@@ -107,7 +108,9 @@ const CatsApp = () => {
                 </div>
             </div>
         </div>
+        <Link to='/charts' className='btn btn-default border w-100 bg-light rounded-10 text-decoration-none'>See 5-day Humidity and Temperature Chart</Link>
         </div>
+        
     )
 }
 
