@@ -21,11 +21,8 @@ const Chart = () => {
   const search = async () => {
 
     const element = document.getElementsByClassName("cityInput");
-
     if (element[0].value === "") {
-
       return 0;
-
     }
 
 
@@ -37,13 +34,9 @@ const Chart = () => {
 
 
     fetch(url)
-
       .then(response => response.json())
-
       .then(result => {
-
         setItems(result.list);
-
       });
 
   };
@@ -51,16 +44,13 @@ const Chart = () => {
 
 
   useEffect(() => {
-
     search();
-
   }, []);
 
   let temp = [];
   let dtx = [];
   let humidity = [];
   let humi = [];
-  
   
   
   if (items && items.length > 0) {
@@ -71,10 +61,10 @@ const Chart = () => {
       humidity.push(item.main.humidity);
       humi.push(item.dt_txt);
       }
-  
     });
   
   }
+  
   const data = {
     labels: dtx,
     datasets: [
